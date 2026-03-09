@@ -18,23 +18,9 @@ Production-style **ETL pipeline** that extracts NASA Astronomy Picture of the Da
 
 ## Architecture
 
-```
-                    ┌──────────────────────────────────────────────────┐
-                    │              Apache Airflow (Docker)              │
-                    │                                                  │
-                    │   ┌───────────┐   ┌─────────────┐   ┌────────┐  │
-  NASA APOD API ──────► │  Extract  │──►│  Transform  │──►│  Load  │  │
-  (REST / JSON)     │   │ (HTTP GET)│   │ (parse JSON)│   │ (SQL)  │  │
-                    │   └───────────┘   └─────────────┘   └───┬────┘  │
-                    │                                         │       │
-                    └─────────────────────────────────────────┼───────┘
-                                                              │
-                                                              ▼
-                                                     ┌──────────────┐
-                                                     │  PostgreSQL  │
-                                                     │  (Docker)    │
-                                                     └──────────────┘
-```
+<img width="1536" height="1024" alt="ChatGPT Image Mar 9, 2026 at 04_31_47 PM" src="https://github.com/user-attachments/assets/53424bdc-fd5c-4c24-a5a5-489160880732" />
+
+
 
 **DAG Flow:**
 
